@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------------ #
-# Title: Assignment04
-# Desc: This assignment demonstrates using conditional logic and looping
+# Title: Assignment05
+# Desc: This Assignment Demonstrates Advanced Collections and Error Handling
 # Change Log: (Who, When, What)
 #   Rabiya Wasiq,11/11/2030,Created Script
 # ------------------------------------------------------------------------------------------ #
