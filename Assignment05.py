@@ -3,6 +3,7 @@
 # Desc: This Assignment Demonstrates Advanced Collections and Error Handling
 # Change Log: (Who, When, What)
 #   Rabiya Wasiq,11/11/2030,Created Script
+#   Rabiya Wasiq, 11/13/2023, Updated comments
 # ------------------------------------------------------------------------------------------ #
 
 
@@ -35,12 +36,10 @@ student_data: list = []
 students: list[dict[str,str]] = []
 
 # Read Data from Json file
-
 try:
     file = open(FILENAME, 'r')
     students = json.load(file)
     file.close()
-
 except FileNotFoundError as e:
     print(e, e.__doc__, e.__str__(),type(e), sep='\n')
     print('Json file not found, creating it...')
@@ -70,7 +69,7 @@ while True:
     menu_choice = input("Please choose an option from the above menu: ")
     print()
 
-    # Menu choice 1 shows the data extracted from the csv and saved in the two-dimensional list
+    # Menu choice 1 shows the data extracted from the JSON and saved in the two-dimensional list
     if menu_choice == "1":
         for student_data in students:
             print(f'Student Full Name :{student_data["First_Name"]} {student_data["Last_Name"]} | Course Name : {student_data["Course_Name"]}')
@@ -91,7 +90,7 @@ while True:
         while True:
             try:
                 student_last_name = input("Enter the student's last name: ").capitalize()
-                if not student_first_name.isalpha():
+                if not student_last_name.isalpha():
                     raise ValueError('Student First Name can only contain alphabetic characters')
                 break
             except ValueError as e:
@@ -122,7 +121,7 @@ while True:
             students.append(
                 student_data)  # adding new student data to the existing data extracted from json file and stored in 2D list
 
-
+        #Writing Data to JSON file and adding exceptions
             try:
                 file = open(FILENAME, 'w')  # using the write function, to truncate the file
                 json.dump(students, file)
